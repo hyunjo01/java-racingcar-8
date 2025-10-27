@@ -12,7 +12,7 @@ public class RaceController {
 
     public void run() {
         String carNames = inputView.getCarNames();
-
+        String roundNumber = inputView.getRoundNumber();
     }
 
 }
