@@ -3,7 +3,7 @@ package racingcar.model;
 public class RacingCar {
 
     private final String name;
-    private int runCount;
+    private int moveCount;
 
     private static final int NAME_MIN_LENGTH = 1;
     private static final int NAME_MAX_LENGTH = 5;
@@ -12,11 +12,11 @@ public class RacingCar {
 
     public RacingCar(String name) {
         this.name = name;
-        runCount = 0;
+        moveCount = 0;
     }
 
     public void move(int randomNumber) {
-        if (canMove(randomNumber)) runCount++;
+        if (canMove(randomNumber)) moveCount++;
     }
 
     private boolean canMove(int randomNumber) {
