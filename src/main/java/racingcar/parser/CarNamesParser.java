@@ -14,7 +14,8 @@ public class CarNamesParser {
     public RacingCars parse(String carNames) {
         RacingCars racingCars = new RacingCars();
         String[] nameTokens = split(carNames);
-        for (String name: nameTokens) {
+        for (String nameToken: nameTokens) {
+            String name = removeBlank(nameToken);
             RacingCar racingCar = new RacingCar(name);
             racingCars.addCar(racingCar);
         }
@@ -23,6 +24,10 @@ public class CarNamesParser {
 
     private String[] split(String carNames) {
         return carNames.split(DELIMITER);
+    }
+
+    private String removeBlank(String nameToken) {
+        return nameToken.replaceAll(" ", "");
     }
 
 }
