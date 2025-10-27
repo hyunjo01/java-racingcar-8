@@ -3,6 +3,8 @@ package racingcar.parser;
 import racingcar.model.RacingCar;
 import racingcar.model.RacingCars;
 
+import java.util.ArrayList;
+
 public class CarNamesParser {
 
     private static final String DELIMITER = ",";
@@ -11,19 +13,18 @@ public class CarNamesParser {
 
     }
 
-    public RacingCars parse(String carNames) {
-        RacingCars racingCars = new RacingCars();
-        String[] nameTokens = split(carNames);
+    public ArrayList<String> parse(String carNamesString) {
+        ArrayList<String> parsingNames = new ArrayList<>();
+        String[] nameTokens = split(carNamesString);
         for (String nameToken: nameTokens) {
             String name = removeBlank(nameToken);
-            RacingCar racingCar = new RacingCar(name);
-            racingCars.addCar(racingCar);
+            parsingNames.add(name);
         }
-        return racingCars;
+        return parsingNames;
     }
 
-    private String[] split(String carNames) {
-        return carNames.split(DELIMITER);
+    private String[] split(String carNamesString) {
+        return carNamesString.split(DELIMITER);
     }
 
     private String removeBlank(String nameToken) {
