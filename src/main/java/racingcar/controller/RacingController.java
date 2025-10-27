@@ -22,6 +22,9 @@ public class RacingController {
         return racingService.createRacingCars(carNamesString);
     }
 
+    private void play(RacingCars racingCars, int roundNumber) {
+        racingService.play(racingCars, roundNumber);
+    }
 
     public void run() {
         String carNamesString = getCarNames();

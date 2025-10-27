@@ -14,4 +14,10 @@ public class RacingCars {
         values.add(racingCar);
     }
 
+    public void runRound(RandomNumberGeneration randomNumberGeneration) {
+        for (RacingCar racingCar: values) {
+            racingCar.move(randomNumberGeneration.generate());
+        }
+    }
+
 }
