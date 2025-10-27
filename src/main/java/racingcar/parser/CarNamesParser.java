@@ -1,7 +1,7 @@
 package racingcar.parser;
 
-import racingcar.domain.Car;
-import racingcar.domain.Cars;
+import racingcar.model.RacingCar;
+import racingcar.model.RacingCars;
 
 public class CarNamesParser {
 
@@ -11,14 +11,14 @@ public class CarNamesParser {
 
     }
 
-    public Cars parse(String carNames) {
-        Cars cars = new Cars();
+    public RacingCars parse(String carNames) {
+        RacingCars racingCars = new RacingCars();
         String[] nameTokens = split(carNames);
         for (String name: nameTokens) {
-            Car car = new Car(name);
-            cars.addCar(car);
+            RacingCar racingCar = new RacingCar(name);
+            racingCars.addCar(racingCar);
         }
-        return cars;
+        return racingCars;
     }
 
     private String[] split(String carNames) {

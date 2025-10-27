@@ -1,6 +1,6 @@
 package racingcar;
 
-import racingcar.controller.RaceController;
+import racingcar.controller.RacingController;
 import racingcar.parser.CarNamesParser;
 import racingcar.view.InputView;
 
@@ -9,7 +9,7 @@ public class Application {
 
         InputView inputView = new InputView();
         CarNamesParser carNamesParser = new CarNamesParser();
-        RaceController raceController = new RaceController(inputView, carNamesParser);
+        RacingController raceController = new RacingController(inputView, carNamesParser);
         raceController.run();
 
     }
